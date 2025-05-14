@@ -1,8 +1,12 @@
 import streamlit as st
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
-# Get DB URL from Streamlit secrets or from .env file
+# Define the declarative base class (needed for models)
+Base = declarative_base()
+
+# Get DB URL from Streamlit secrets
 DATABASE_URL = st.secrets["general"]["DB_URL"]
 
 # Create SQLAlchemy engine with the Session Pooler URL
