@@ -18,7 +18,7 @@ def get_session():
     finally:
         session.close()
 
-# Now use the context manager in your app
+
 ########################### SIDEBAR #############################################
 st.sidebar.title('Around Town 🔍')
 st.sidebar.divider()
@@ -52,40 +52,6 @@ with get_session() as session:
 
     group_count = query.count()
     groups = query.order_by(Group.name.asc()).all()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
 
 
 st.sidebar.divider()
@@ -151,7 +117,7 @@ with tab1:
 #                         title="Groups on Map", mapbox_style="carto-positron")
 #st.plotly_chart(fig_map, use_container_width=True, key="map_chart")
 
-######################## VISUAL INSIGHTS ##############################
+######################## INSIGHTS ##############################
 with tab2:
     st.subheader("Data Insights")
     insight_metric = st.selectbox('Choose an Insight', ['Groups by Area', 'Category Distribution', 'Age Group Distribution'])
