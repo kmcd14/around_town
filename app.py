@@ -4,8 +4,8 @@ from db_conn import engine
 from models import Group, Category
 import plotly.express as px
 import pandas as pd
-from geopy.geocoders import Nominatim
-from geopy.exc import GeocoderTimedOut
+#from geopy.geocoders import Nominatim
+#from geopy.exc import GeocoderTimedOut
 import time
 
 # DB setup
