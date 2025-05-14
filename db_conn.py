@@ -9,12 +9,19 @@ Base = declarative_base()
 # Get DB URL from Streamlit secrets
 DATABASE_URL = st.secrets["general"]["DB_URL"]
 
+# Create SQLAlchemy engine with connection pooling
+engine = create_engine(
+    DATABASE_URL,
+    pool_size=10,  # Max number of connections to keep in the pool
+    max_overflow=20,  # Max number of connections that can exceed pool_size
+    pool_timeout=30,  # Max time to wait for a connection before throwing an error
+    pool_recycle=1800  # Recycle connections after this many seconds (optional)
+)
 
-# Create SQLAlchemy engine
-engine = create_engine(DATABASE_URL)
+# Create session maker
 Session = sessionmaker(bind=engine)
 
-# Test connection
+# Test connection (optional but helpful for troubleshooting)
 try:
     with engine.connect() as connection:
         print("Connection successful!")
