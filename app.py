@@ -90,7 +90,7 @@ with tab1:
             st.markdown(f"""
                 <div style="background-color:#ffffff; padding: 16px; border-radius: 12px;
                             box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px;">
-                    <h4 style="color:#2563eb;">{group.name}</h4>
+                    <h4 style="color:#0b2c75;">{group.name}</h4>
             """, unsafe_allow_html=True)
 
             st.markdown(f"**📍 Area:** {group.area} | **👥 Age:** {group.age_group}")
